@@ -87,7 +87,6 @@ general advantage for any model.
 | `code/adaptive_hybrid_sms_spam_reviewed.ipynb` | Complete experiment code and preserved historical outputs, with explanatory annotations. |
 | `data/main_results.csv` | Supplied five-model results. |
 | `data/adaptive_hybrid_test_analysis.csv` | Supplied 837 test messages, labels, predictions and gate analysis. These messages originate from the attributed SMS benchmark. |
-## Check the saved results
 
 ## Key Findings
 
