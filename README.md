@@ -80,41 +80,14 @@ general advantage for any model.
 8. Save outputs
    main_results.csv, adaptive_hybrid_test_analysis.csv
 ```
+## Files
 
-## Repository Contents
-
-| Path | Purpose |
+| File or folder | Purpose |
 |---|---|
-| `code/adaptive_hybrid_sms_spam_reviewed.ipynb` | Full experiment code and saved outputs |
-| `assets/data/main_results.csv` | Five-model results |
-| `assets/data/adaptive_hybrid_test_analysis.csv` | 837 test messages with labels, predictions and gate values |
-| `code/audit_saved_results.py` | Recomputes metrics from saved predictions (no training) |
-| `audit/` | Recomputed metrics, evidence and claim traceability |
-| `requirements.txt` | Dependency names (not a tested lockfile) |
-| `REFERENCES.md`, `code/THIRD_PARTY_NOTICES.md` | References and resource notices |
-
-## How to Run
-
-**A. Verify saved results (no dependencies):**
-
-```sh
-python3 code/audit_saved_results.py
-```
-
-Expected hybrid confusion matrix: `[[723, 2], [5, 107]]`, accuracy 0.9916, macro-F1 0.9818.
-
-**B. Run a new experiment:**
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m jupyter notebook code/adaptive_hybrid_sms_spam_reviewed.ipynb
-```
-
-Run the cells in order. The first run downloads the dataset, GloVe and DistilBERT.
-Record `python --version`, `pip freeze` and the resource revisions. Keep the new
-results separate from the supplied CSVs.
+| `code/adaptive_hybrid_sms_spam_reviewed.ipynb` | Complete experiment code and preserved historical outputs, with explanatory annotations. |
+| `data/main_results.csv` | Supplied five-model results. |
+| `data/adaptive_hybrid_test_analysis.csv` | Supplied 837 test messages, labels, predictions and gate analysis. These messages originate from the attributed SMS benchmark. |
+## Check the saved results
 
 ## Key Findings
 
@@ -132,7 +105,3 @@ results separate from the supplied CSVs.
 - Exact package versions and hardware were not recorded, and full training has not been re-validated.
 - Next steps: group duplicates before splitting, repeat over several seeds, and test gate ablations.
 
-## Provenance and Licensing
-
-AI assistance was used for documentation and evidence checks. See `code/CODE_PROVENANCE.md`.
-Dataset, model and library terms are listed in `REFERENCES.md`; no project-wide licence has been assigned.
